@@ -3,6 +3,12 @@ class Cart extends Controller
 {
     public function __construct()
     {
+        if (!isLoggedIn()) {
+            $data = ["message" => "Sorry. Only logged-in users have access to this page."];
+            $this->view('pages/error', $data);
+            die();
+        }
+
         $this->codeModel = $this->model('Code');
         $this->userCodeModel = $this->model('UserCode');
     }
