@@ -17,7 +17,7 @@ spl_autoload_register(function ($className) {
 $ip     = $_SERVER['REMOTE_ADDR']; // user's IP address 
 $json   = file_get_contents('ip-api.com/json' . $ip); // obtain timezone by IP
 $ipData = json_decode($json, true); // object, contain ip info
-
+echo $ip;
 if ($ipData['timezone']) {
   date_default_timezone_set($ipData['timezone']);
 } else {
