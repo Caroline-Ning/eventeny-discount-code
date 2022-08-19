@@ -15,4 +15,5 @@ If you register as an event creator, you will have excess to the events dashboar
 You also have access to the cart, where you can apply a discount code to the sample event.
 
 **Guest**
+
 If you didn't register as an event creator, you only have access to the cart, where you can apply a discount code to the sample event.
