@@ -91,7 +91,7 @@ class Cart extends Controller
 
         // init data
         $data = [
-            'apply' => $input,
+            'apply' => trim($input),
             "title" => "Cart",
             'event_id' => 0,
             'total' => $total,
@@ -105,7 +105,7 @@ class Cart extends Controller
         }
 
         // 1. check if this input code exists for this event
-        $code = $this->codeModel->getCodeByEventAndCode($event_id, $input);
+        $code = $this->codeModel->getCodeByEventAndCode($event_id, strtolower(trim($input)));
 
         if (!$code) {
             $data['apply_err'] = 'Invalid Coupon Code';

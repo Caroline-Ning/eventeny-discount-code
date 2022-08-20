@@ -131,7 +131,7 @@ class Codes extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $data = [
-                'code' => trim($_POST['code']),
+                'code' => strtolower(trim($_POST['code'])),
                 'event_id' => $event_id,
                 'type' => trim($_POST['type']),
                 'type_value' => $_POST['type_value'],
@@ -248,7 +248,7 @@ class Codes extends Controller
 
             $data = [
                 'id' => $code_id,
-                'code' => trim($_POST['code']),
+                'code' => strtolower(trim($_POST['code'])),
                 'event_id' => $event_id,
                 'type' => trim($_POST['type']),
                 'type_value' => $_POST['type_value'],
