@@ -182,6 +182,10 @@ class Codes extends Controller
                         $data['code_err'] = 'Code is already created for this event.';
                     }
                 }
+
+                if (!ctype_alnum($data['code'])) {
+                    $data['code_err'] = 'Please enter letters and digits only.';
+                }
             }
 
             if ($data["limit_times"] && empty($data['limit_times_value'])) {
@@ -304,6 +308,9 @@ class Codes extends Controller
                         echo $ele->code, $ele->id, $code_id,
                         $data['code_err'] = 'Code is already created.';
                     }
+                }
+                if (!ctype_alnum($data['code'])) {
+                    $data['code_err'] = 'Please enter letters and digits only.';
                 }
             }
 
