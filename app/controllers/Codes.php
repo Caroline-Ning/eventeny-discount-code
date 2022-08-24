@@ -184,7 +184,7 @@ class Codes extends Controller
                 }
 
                 if (!ctype_alnum($data['code'])) {
-                    $data['code_err'] = 'Only accept letters and digits.';
+                    $data['code_err'] = 'Please enter letters and digits only.';
                 }
             }
 
@@ -194,11 +194,11 @@ class Codes extends Controller
                 $data['limit_times_value_err'] = 'Please select to limit the number of times';
             }
 
-            if (!empty($data['limit_times_value']) && $data['type_value'] <= 0) {
+            if (empty($data['type_value']) || $data['type_value'] <= 0) {
                 $data['type_value_err'] = "Invalid value";
             }
 
-            if ($data['limit_times_value'] <= 0) {
+            if (!empty($data['limit_times_value']) && $data['limit_times_value'] <= 0) {
                 $data['limit_times_value_err'] = "Invalid value";
             }
 
@@ -320,11 +320,11 @@ class Codes extends Controller
                 $data['limit_times_value_err'] = 'Please select to limit the number of times';
             }
 
-            if (!empty($data['limit_times_value']) && $data['type_value'] <= 0) {
+            if (empty($data['type_value']) || $data['type_value'] <= 0) {
                 $data['type_value_err'] = "Invalid value";
             }
 
-            if ($data['limit_times_value'] <= 0) {
+            if (!empty($data['limit_times_value']) && $data['limit_times_value'] <= 0) {
                 $data['limit_times_value_err'] = "Invalid value";
             }
 
