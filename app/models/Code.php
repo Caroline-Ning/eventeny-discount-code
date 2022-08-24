@@ -39,10 +39,10 @@ class Code
   public function editCode($data)
   {
     // prepare statement
-    $this->db->query('UPDATE codes SET code=:code,type=:type,type_value=:type_value,customer_eligibility=:customer_eligibility,limit_times=:limit_times,limit_times_value=:limit_times_value,limit_one=:limit_one,start_date=:start_date,end_date=:end_date,is_deleted=:is_deleted WHERE code_id=:code_id');
+    $this->db->query('UPDATE codes SET code=:code,type=:type,type_value=:type_value,customer_eligibility=:customer_eligibility,limit_times=:limit_times,limit_times_value=:limit_times_value,limit_one=:limit_one,start_date=:start_date,end_date=:end_date,is_deleted=:is_deleted WHERE id=:id');
 
     // bind $data with placeholder
-    $tableHead = ["code_id", "code", "type", "type_value", "customer_eligibility", "limit_times", "limit_times_value", "limit_one", "start_date", "end_date", "is_deleted"];
+    $tableHead = ["id", "code", "type", "type_value", "customer_eligibility", "limit_times", "limit_times_value", "limit_one", "start_date", "end_date", "is_deleted"];
 
     foreach ($tableHead as $str) {
       $this->db->bind(':' . $str, $data[$str]);
