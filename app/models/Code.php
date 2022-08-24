@@ -39,10 +39,10 @@ class Code
   public function editCode($data)
   {
     // prepare statement
-    $this->db->query('UPDATE codes SET code=:code,type=:type,type_value=:type_value,customer_eligibility=:customer_eligibility,limit_times=:limit_times,limit_times_value=:limit_times_value,limit_one=:limit_one,start_date=:start_date,end_date=:end_date,is_deleted=:is_deleted WHERE id=:id');
+    $this->db->query('UPDATE codes SET code=:code,type=:type,type_value=:type_value,customer_eligibility=:customer_eligibility,limit_times=:limit_times,limit_times_value=:limit_times_value,limit_one=:limit_one,start_date=:start_date,end_date=:end_date,is_deleted=:is_deleted WHERE code_id=:code_id');
 
     // bind $data with placeholder
-    $tableHead = ["id", "code", "type", "type_value", "customer_eligibility", "limit_times", "limit_times_value", "limit_one", "start_date", "end_date", "is_deleted"];
+    $tableHead = ["code_id", "code", "type", "type_value", "customer_eligibility", "limit_times", "limit_times_value", "limit_one", "start_date", "end_date", "is_deleted"];
 
     foreach ($tableHead as $str) {
       $this->db->bind(':' . $str, $data[$str]);
@@ -118,14 +118,14 @@ class Code
     return $this->db->single();
   }
 
-  public function updateUsedTimes($code_id,$used_times)
+  public function updateUsedTimes($code_id, $used_times)
   {
     $this->db->query('UPDATE codes SET used_times=:used_times
     WHERE id = :id');
 
     // bind values
     $this->db->bind(':id', $code_id);
-    $this->db->bind(':used_times', $used_times+1);
+    $this->db->bind(':used_times', $used_times + 1);
 
     // execute
     return $this->db->execute();
