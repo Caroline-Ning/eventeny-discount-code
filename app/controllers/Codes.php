@@ -184,7 +184,7 @@ class Codes extends Controller
                 }
 
                 if (!ctype_alnum($data['code'])) {
-                    $data['code_err'] = 'Please enter letters and digits only.';
+                    $data['code_err'] = 'Only accept letters and digits.';
                 }
             }
 
@@ -310,7 +310,7 @@ class Codes extends Controller
                     }
                 }
                 if (!ctype_alnum($data['code'])) {
-                    $data['code_err'] = 'Please enter letters and digits only.';
+                    $data['code_err'] = 'Only accept letters and digits.';
                 }
             }
 
