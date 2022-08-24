@@ -194,7 +194,7 @@ class Codes extends Controller
                 $data['limit_times_value_err'] = 'Please select to limit the number of times';
             }
 
-            if ($data['type_value'] && $data['type_value'] <= 0) {
+            if (!empty($data['limit_times_value']) && $data['type_value'] <= 0) {
                 $data['type_value_err'] = "Invalid value";
             }
 
@@ -320,7 +320,7 @@ class Codes extends Controller
                 $data['limit_times_value_err'] = 'Please select to limit the number of times';
             }
 
-            if ($data['type_value'] && $data['type_value'] <= 0) {
+            if (!empty($data['limit_times_value']) && $data['type_value'] <= 0) {
                 $data['type_value_err'] = "Invalid value";
             }
 
