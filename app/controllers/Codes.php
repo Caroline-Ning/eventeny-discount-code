@@ -349,7 +349,7 @@ class Codes extends Controller
             }
 
             $data = [
-                'code_id' => $code->id,
+                'code_id' => $code_id,
                 'code' => $code->code,
                 'event_id' => $code->event_id,
                 'start_date' => $code->start_date,

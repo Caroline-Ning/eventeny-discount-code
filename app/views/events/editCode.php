@@ -17,7 +17,7 @@
             'limit_one' => '',
         ];   
      -->
-        <form action="<?php echo URLROOT ?>/events_dashboard/<?php echo $data["event_id"] ?>/discount_code/<?php echo $data["id"] ?>/edit" method="POST">
+        <form action="<?php echo URLROOT ?>/events_dashboard/<?php echo $data["event_id"] ?>/discount_code/<?php echo $data["code_id"] ?>/edit" method="POST">
 
             <!-- 1. Code itself, empty, required, has error msg-->
             <div class="form-group mb-3 mt-3">
