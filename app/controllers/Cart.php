@@ -150,7 +150,7 @@ class Cart extends Controller
                 'apply' => $input,
                 "title" => "Cart",
                 'event_id' => $event_id,
-                'total' => round($total, 2),
+                'total' => number_format($total, 2),
                 'subtotal' => 30,
                 'apply_success' => 'Successfully applied!'
             ];
