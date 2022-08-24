@@ -194,6 +194,10 @@ class Codes extends Controller
                 $data['type_value_err'] = "Invalid value";
             }
 
+            if ($data['limit_times_value'] <= 0) {
+                $data['limit_times_value_err'] = "Invalid value";
+            }
+
             if ($data['type'] == 'percentage' && $data['type_value'] > 100) {
                 $data['type_value_err'] = 'Percentage should be less than 100';
             }
@@ -311,6 +315,10 @@ class Codes extends Controller
 
             if ($data['type_value'] <= 0) {
                 $data['type_value_err'] = "Invalid value";
+            }
+
+            if ($data['limit_times_value'] <= 0) {
+                $data['limit_times_value_err'] = "Invalid value";
             }
 
             if ($data['type'] == 'percentage' && $data['type_value'] > 100) {
