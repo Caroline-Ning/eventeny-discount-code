@@ -41,11 +41,17 @@ class Database
     public function query($sql)
     {
         $this->stmt = $this->dbh->prepare($sql);
-
-        // echo $sql;
-        // echo $this->stmt;
-        // echo 'in Database.php query()';
     }
+
+    // public function getCodeById($id)
+    // {
+    //   $this->db->query('SELECT * FROM codes 
+    //                     WHERE id = :id AND is_deleted=:is_deleted');
+    //   $this->db->bind(':id', $id);
+    //   $this->db->bind(':is_deleted', 0);
+
+    //   return $this->db->single();
+    // }
 
     /*
             bind values
